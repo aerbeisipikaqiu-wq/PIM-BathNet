@@ -59,7 +59,9 @@ Bathymetric measurements corresponding to the study waters were downloaded from 
   **Purpose:** Use the method based on PIM-BathNet for the inversion of seawater depth.
   **Input:** one SAR image patch and physics data from csv document.
   **Output:** predicted water depth.
+
   This file is used to test the weights of the best_yolo_fixed_transect_model.pth file. Using the full water depth data of the four sections (which were not used for training), the predicted results and accuracy of the proposed PIM-BathNet model for these four sections can be obtained.
+  
   **Notice:** If you want to use this document, you should confirm the patch_dir_path. Suppose you need to test the T32 section, you need to modify the patch_dir_path to r"D:\Python3.12\Github_code\python\T32" or follow the corresponding address. If you want to switch the section, you need to modify patch_dir_path, but you don't need to modify csv_dir_path, because this is caused by the file quantity limit of a single folder on Github.
 
 - `best_advanced_cnn_model3.pth`
@@ -79,6 +81,7 @@ Bathymetric measurements corresponding to the study waters were downloaded from 
   **Purpose:** The method based on PIM-BathNet was used for seawater depth inversion, but an ablation experiment was conducted. Some of the organizational structures were missing.
   **Input:** one SAR image patch and physics data from csv document.
   **Output:** predicted water depth.
+
 
 
 > Note: Some scripts contain hard-coded local paths. Please update file paths before running.
