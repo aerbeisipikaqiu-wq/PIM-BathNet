@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 import cv2
 from scipy.fft import fft2, fftshift, ifft2
+from pathlib import Path
 from sklearn.decomposition import PCA
 from tqdm import tqdm
 
@@ -68,6 +69,14 @@ if __name__ == "__main__":
     save_dir = r'D:\SAR_database\python'          # Directory for patch PNGs
     output_dir = r'D:\SAR_database\python2'        # Output directory
     os.makedirs(output_dir, exist_ok=True)
+
+    ROOT = Path(__file__).parent
+    csv_dir_path = ROOT / "python2"
+    patch_dir_path = ROOT / "python"
+
+    supply_dir_path = ROOT / "supply_data"
+
+    model_save_path = ROOT / "best_transformer_model2.pth"
     
     # Universal matching: match any transect Txx and any sample point Sxxx
     search_pattern = os.path.join(save_dir, "SAR_T*_S*.png")
