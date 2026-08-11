@@ -10,6 +10,7 @@ import numpy as np
 import pandas as pd
 import torch
 import torch.nn as nn
+from pathlib import Path
 from torch.utils.data import Dataset, DataLoader
 
 import os
@@ -219,9 +220,12 @@ class SingleTransectDataset(Dataset):
 
 def evaluate_test_set():
     # ---------------- Path Configuration (Please modify your test folder path here) ----------------
-    patch_dir_path = r"D:\Python3.12\Github_code\python\T32"
-    csv_dir_path   = r'D:\Python3.12\Github_code\python2'
-    model_weight_path = r'D:\SAR_database\python2\best_yolo_fixed_transect_model.pth'
+    ROOT = Path(__file__).parent
+    csv_dir_path = ROOT / "python2"
+    patch_dir_path = ROOT / "python" / "T32"
+    supply_dir_path = ROOT / "supply_data"
+
+    model_weight_path = ROOT / "best_yolo_fixed_transect_model.pth"
     
     
     BATCH_SIZE = 64
