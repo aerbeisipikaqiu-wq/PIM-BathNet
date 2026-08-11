@@ -10,6 +10,7 @@ import numpy as np
 import pandas as pd
 import torch
 import torch.nn as nn
+from pathlib import Path
 from torch.utils.data import Dataset, DataLoader
 
 ## =================================================================
@@ -286,11 +287,17 @@ def main():
     EPOCHS = 100            
     LEARNING_RATE = 0.001
     
-    csv_dir_path = r'D:\SAR_database\python2'   
-    patch_dir_path = r'D:\SAR_database\python'  
-    supply_dir_path = r'D:\SAR_database\supply_data' 
-    model_save_path = r'D:\SAR_database\python2\best_yolo_fixed_transect_model.pth'
-    
+
+    ROOT = Path(__file__).parent
+    csv_dir_path = ROOT / "python2"
+    patch_dir_path = ROOT / "python"
+
+    supply_dir_path = ROOT / "supply_data"
+
+    model_save_path = ROOT / "best_yolo_fixed_transect_model.pth"
+
+
+
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     print(f"⚡ Compute device: [{device}]")
     
