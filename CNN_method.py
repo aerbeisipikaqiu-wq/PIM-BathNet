@@ -11,7 +11,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
-## 🔄 [Change]: Import sklearn for R2 score computation
+from pathlib import Path
 from sklearn.metrics import r2_score
 
 ## ==========================================
@@ -238,9 +238,14 @@ def main():
     EPOCHS = 70  
     LEARNING_RATE = 0.001
     
-    csv_dir_path = r'D:\SAR_database\python2'   
-    patch_dir_path = r'D:\SAR_database\python'    
-    model_save_path = r'D:\SAR_database\python2\best_advanced_cnn_model3.pth'
+
+    ROOT = Path(__file__).parent
+    csv_dir_path = ROOT / "python2"
+    patch_dir_path = ROOT / "python"
+
+    supply_dir_path = ROOT / "supply_data"
+
+    model_save_path = ROOT / "best_advanced_cnn_model3.pth"
     
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     print(f"[Debug 2] Compute device set to: [{device}]")
