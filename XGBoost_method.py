@@ -2,11 +2,13 @@ import pandas as pd
 import numpy as np
 import xgboost as xgb
 from sklearn.model_selection import train_test_split
+from pathlib import Path
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
 # ===================== 1. Data loading =====================
-base_path = r"D:\SAR_database\python2\SAR_data.csv"
-supply_path = r"D:\SAR_database\supply_data\SAR_data.csv"
+ROOT = Path(__file__).parent
+base_path = ROOT / "python2" / "SAR_data.csv"
+supply_path = ROOT / "supply_data" / "SAR_data.csv"
 
 print("Loading the dataset...")
 df_base = pd.read_csv(base_path)
