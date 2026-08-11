@@ -222,7 +222,7 @@ def evaluate_test_set():
     # ---------------- Path Configuration (Please modify your test folder path here) ----------------
     ROOT = Path(__file__).parent
     csv_dir_path = ROOT / "python2"
-    patch_dir_path = ROOT / "python" / "T32"
+    patch_dir_path = ROOT / "test_data" / "T32"
     supply_dir_path = ROOT / "supply_data"
 
     model_weight_path = ROOT / "best_yolo_fixed_transect_model.pth"
