@@ -10,6 +10,7 @@ import scipy.io as sio
 import torch
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
+from pathlib import Path
 from sklearn.metrics import r2_score
 
 ## ==========================================
@@ -199,9 +200,14 @@ def main():
     WARMUP_EPOCHS = 5     
     PATIENCE = 15               
     
-    csv_dir_path = r'D:\SAR_database\python2'
-    patch_dir_path = r'D:\SAR_database\python'
-    model_save_path = r'D:\SAR_database\python2\best_transformer_model2.pth' 
+
+    ROOT = Path(__file__).parent
+    csv_dir_path = ROOT / "python2"
+    patch_dir_path = ROOT / "python"
+
+    supply_dir_path = ROOT / "supply_data"
+
+    model_save_path = ROOT / "best_transformer_model2.pth"
     
     all_transects = list(range(50))  
     val_transects = list(range(2, 50, 5))  # [2, 7, 12, 17, 22, 27, 32, 37, 42, 47]
