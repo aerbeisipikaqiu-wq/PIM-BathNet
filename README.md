@@ -55,14 +55,6 @@ Bathymetric measurements corresponding to the study waters were downloaded from 
   **Input:** one SAR image patch and physics data from csv document.
   **Output:** predicted water depth.
 
-- `test.py`
-  **Purpose:** Use the method based on PIM-BathNet for the inversion of seawater depth.
-  **Input:** one SAR image patch and physics data from csv document.
-  **Output:** predicted water depth.
-This file is used to test the weights of the best_yolo_fixed_transect_model.pth file. Using the full water depth data of the four sections (which were not used for training), the predicted results and accuracy of the proposed PIM-BathNet model for these four sections can be obtained.
-  **Notice:** If you want to use this document, you should confirm the patch_dir_path. Suppose you need to test the T32 section, you need to modify the patch_dir_path to "patch_dir_path = ROOT / "test_data" / "T32"" or follow the corresponding address. If you want to switch the section, you need to modify patch_dir_path, but you don't need to modify csv_dir_path, because this is caused by the file quantity limit of a single folder on Github.
-
-
 - `1.rar、2.rar 、3.rar 、4.rar 、`
   **Introduction:** The training set data compression file. If you wish to use this document, you need to extract the four compressed files, move all the contents inside them to the "python" folder, and then run the training code.
 
@@ -74,8 +66,6 @@ This file is used to test the weights of the best_yolo_fixed_transect_model.pth 
 
 - `best_yolo_fixed_transect_model.pth`
   **Introduction:** The weight file of the PIM-BathNet.
-
-- `Folder：test_data` is the storage path for image patch of test dataset.
 
 - `Folder：python` is the storage path for image patch of train dataset.
 
